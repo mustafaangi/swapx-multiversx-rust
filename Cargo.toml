@@ -1,0 +1,14 @@
+[package]
+name = "swap-contract"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/swap.rs"
+
+[dependencies]
+multiversx-sc = "0.43.5"
+multiversx-sc-derive = "0.43.5"
+
+[dev-dependencies]
+multiversx-sc-scenario = "0.43.5"

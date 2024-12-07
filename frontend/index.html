@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Swap Tokens</h1>
+        <div class="wallet-info" id="wallet-info">Not connected</div>
+        <button id="connect-wallet">Connect Wallet</button>
+        <div class="swap-container">
+            <div class="token-input">
+                <label for="token-in">Token In:</label>
+                <input type="text" id="token-in">
+            </div>
+            <div class="amount-input">
+                <label for="amount-in">Amount In:</label>
+                <input type="number" id="amount-in">
+            </div>
+            <div class="token-output">
+                <label for="token-out">Token Out:</label>
+                <input type="text" id="token-out">
+            </div>
+            <div class="amount-output">
+                <label for="amount-out">Min Amount Out:</label>
+                <input type="number" id="amount-out">
+            </div>
+            <div class="slippage-control">
+                <label>Slippage Tolerance:</label>
+                <select id="slippage-rate">
+                    <option value="0.5">0.5%</option>
+                    <option value="1.0">1.0%</option>
+                    <option value="2.0">2.0%</option>
+                </select>
+            </div>
+            <div class="swap-rate" id="swap-rate">Swap Rate: N/A</div>
+            <button id="swap-button" disabled>Swap</button>
+        </div>
+        <div class="liquidity-container">
+            <h2>Add Liquidity</h2>
+            <div class="token-input">
+                <label for="token-a">Token A:</label>
+                <input type="text" id="token-a">
+                <label for="amount-a">Amount A:</label>
+                <input type="number" id="amount-a">
+            </div>
+            <div class="token-input">
+                <label for="token-b">Token B:</label>
+                <input type="text" id="token-b">
+                <label for="amount-b">Amount B:</label>
+                <input type="number" id="amount-b">
+            </div>
+            <button id="add-liquidity-button">Add Liquidity</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

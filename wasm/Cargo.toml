@@ -1,0 +1,24 @@
+[package]
+name = "swap-contract-wasm"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[workspace]
+members = ["."]
+
+[dependencies]
+swap-contract = { path = ".." }
+multiversx-sc = "0.43.5"
+multiversx-sc-wasm-adapter = "0.43.5"
+wee_alloc = "0.4.5"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

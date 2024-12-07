@@ -1,0 +1,26 @@
+
+# Build artifacts
+/target
+/wasm/target
+/output
+
+# Private keys and credentials
+*.pem
+.env
+walletKey.pem
+contract_address.txt
+
+# Environment files
+.env.local
+.env.development
+.env.production
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

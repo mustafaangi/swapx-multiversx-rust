@@ -1,0 +1,119 @@
+Starting deployment process...
+Cleaning build directories...
+Cleaning directory: target
+Cleaning directory: wasm/target
+Cleaning directory: output
+Creating output directory...
+Building contract...
+   Compiling proc-macro2 v1.0.92
+   Compiling unicode-ident v1.0.14
+   Compiling syn v1.0.109
+   Compiling version_check v0.9.5
+   Compiling smallvec v1.13.2
+   Compiling hex v0.4.3
+   Compiling autocfg v1.4.0
+   Compiling once_cell v1.20.2
+   Compiling endian-type v0.1.2
+   Compiling cfg-if v1.0.0
+   Compiling zerocopy v0.7.35
+   Compiling arrayvec v0.7.6
+   Compiling bitflags v1.3.2
+   Compiling hex-literal v0.3.4
+   Compiling nibble_vec v0.1.0
+   Compiling ahash v0.8.11
+   Compiling radix_trie v0.2.1
+   Compiling num-traits v0.2.19
+   Compiling quote v1.0.37
+   Compiling hashbrown v0.13.2
+   Compiling multiversx-sc-codec-derive v0.18.1
+   Compiling multiversx-sc-derive v0.43.5
+   Compiling multiversx-sc-codec v0.18.1
+   Compiling multiversx-sc v0.43.5
+   Compiling swap-contract v0.1.0 (/Users/mustafaangi/Desktop/Rust/multiverse-final)
+warning: unused variable: `amount_after_fees`
+   --> src/swap.rs:106:13
+    |
+106 |         let amount_after_fees = &amount_in - &protocol_fee - &lp_fee;
+    |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_amount_after_fees`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: `swap-contract` (lib) generated 1 warning (run `cargo fix --lib -p swap-contract` to apply 1 suggestion)
+    Finished release [optimized] target(s) in 4.05s
+Building WASM...
+   Compiling proc-macro2 v1.0.92
+   Compiling unicode-ident v1.0.14
+   Compiling syn v1.0.109
+   Compiling version_check v0.9.5
+   Compiling hex v0.4.3
+   Compiling autocfg v1.4.0
+   Compiling smallvec v1.13.2
+   Compiling cfg-if v1.0.0
+   Compiling once_cell v1.20.2
+   Compiling endian-type v0.1.2
+   Compiling zerocopy v0.7.35
+   Compiling arrayvec v0.7.6
+   Compiling bitflags v1.3.2
+   Compiling hex-literal v0.3.4
+   Compiling wee_alloc v0.4.5
+   Compiling memory_units v0.4.0
+   Compiling cfg-if v0.1.10
+   Compiling nibble_vec v0.1.0
+   Compiling ahash v0.8.11
+   Compiling radix_trie v0.2.1
+   Compiling num-traits v0.2.19
+   Compiling quote v1.0.37
+   Compiling hashbrown v0.13.2
+   Compiling multiversx-sc-codec-derive v0.18.1
+   Compiling multiversx-sc-derive v0.43.5
+   Compiling multiversx-sc-codec v0.18.1
+   Compiling multiversx-sc v0.43.5
+   Compiling swap-contract v0.1.0 (/Users/mustafaangi/Desktop/Rust/multiverse-final)
+   Compiling multiversx-sc-wasm-adapter v0.43.5
+warning: unused variable: `amount_after_fees`
+   --> /Users/mustafaangi/Desktop/Rust/multiverse-final/src/swap.rs:106:13
+    |
+106 |         let amount_after_fees = &amount_in - &protocol_fee - &lp_fee;
+    |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_amount_after_fees`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: `swap-contract` (lib) generated 1 warning (run `cargo fix --lib -p swap-contract` to apply 1 suggestion)
+   Compiling swap-contract-wasm v0.1.0 (/Users/mustafaangi/Desktop/Rust/multiverse-final/wasm)
+error[E0425]: cannot find function `callback` in module `swap_contract::endpoints`
+  --> src/lib.rs:24:21
+   |
+24 |         callback => callback
+   |                     ^^^^^^^^ help: a function with a similar name exists: `callBack`
+   |
+  ::: /Users/mustafaangi/Desktop/Rust/multiverse-final/src/swap.rs:14:1
+   |
+14 | #[multiversx_sc::contract]
+   | -------------------------- similarly named function `callBack` defined here
+
+error[E0658]: use of unstable library feature 'core_panic': internal details of the implementation of the `panic!` and related macros
+  --> src/lib.rs:30:5
+   |
+30 |     core::panicking::panic_fmt(info)
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: add `#![feature(core_panic)]` to the crate attributes to enable
+
+error[E0308]: mismatched types
+  --> src/lib.rs:30:32
+   |
+30 |     core::panicking::panic_fmt(info)
+   |     -------------------------- ^^^^ expected `Arguments<'_>`, found `&PanicInfo<'_>`
+   |     |
+   |     arguments to this function are incorrect
+   |
+note: function defined here
+  --> /Users/mustafaangi/.rustup/toolchains/nightly-2023-10-01-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/panicking.rs:52:14
+   |
+52 | pub const fn panic_fmt(fmt: fmt::Arguments<'_>) -> ! {
+   |              ^^^^^^^^^
+
+Some errors have detailed explanations: E0308, E0425, E0658.
+For more information about an error, try `rustc --explain E0308`.
+error: could not compile `swap-contract-wasm` (lib) due to 3 previous errors
+WASM build failed
