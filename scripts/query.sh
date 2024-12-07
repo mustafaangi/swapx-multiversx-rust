@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default values
-CONTRACT="erd1qqqqqqqqqqqqqpgqg7q8gekyl7ltg5exdv5ngc79khn6hjwh07kscx9dtc"
+CONTRACT="contract-address"
 PROXY="https://devnet-gateway.multiversx.com"
 
 # Check if function name is provided

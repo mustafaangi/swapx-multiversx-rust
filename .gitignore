@@ -24,3 +24,7 @@ contract_address.txt
 # OS files
 .DS_Store
 Thumbs.db
+
+/mandos
+/docs
+wasm/Cargo.lock

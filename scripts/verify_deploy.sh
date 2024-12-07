@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # Configuration
-CONTRACT="erd1qqqqqqqqqqqqqpgqg7q8gekyl7ltg5exdv5ngc79khn6hjwh07kscx9dtc"
+CONTRACT="contract-address"
 PROXY="https://devnet-gateway.multiversx.com"
 MAX_RETRIES=10
 SLEEP_TIME=5
